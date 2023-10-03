@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml/"
+xmlns:th="https://www.thymeleaf.org">
+  <head>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/> 
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/> 
+    <meta charset="UTF-8">
+    <title>Eventos Gratuitos</title>
+  </head>
+  <body>
+	  <nav class="navbar navbar-dark bg-warning">
+		  <a class="navbar-brand">
+			  <img src="/images/logo.png" width="50" height="50" alt="logo"/>
+			  <img src="/images/name.png" width="300" height="50" alt="name"/>
+		  </a >
+			  
+
+	  </nav>
+
+	 <form action="/eventos" method="POST">
+	  
+	 <div class="alert alert-success alert-dismissible" role="alert" th:if="${!#strings.isEmpty(mensagem)}">
+	  	<button type="button" class="close" data-dismiss="alert"></button>
+	  	<span> Salvo com sucesso! </span>
+	  </div>
+
+	  <div class="card">
+		  <div class="card-header tux-titulo-panel"> 
+			  <span class="tux-titulo-panel"><strong>Cadastrar novo evento</strong>  </span>
+		  </div>
+		  
+		  <div class="card-body">
+			  
+			  <div class="form-group row">
+				  <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+				  <div class="col-sm-2">
+					  <input type="text" class="form-control" id="nome" name="nome">  
+				  </div>
+			  </div>
+			  
+			  <div class="form-group row">
+				  <label for="descricao" class="col-sm-2 col-form-label">Descrição</label>
+				  <div class="col-sm-2">
+					  <input type="text" class="form-control" id="descricao" name="descricao">  
+				  </div>
+			  </div>
+			  
+			  <div class="form-group row">
+				  <label for="publicoAlvo" class="col-sm-2 col-form-label">Público Alvo</label>
+				  <div class="col-sm-2">
+					  <input type="text" class="form-control" id="publicoAlvo" name="publicoAlvo">  
+				  </div>
+			  </div>
+			  
+			  <div class="form-group row">
+				  <label for="dataEvento" class="col-sm-2 col-form-label">Data</label>
+			  	  <div class="col-sm-2">
+				      <input type="text" class="form-control" id="dataEvento" placeholder="dd/mm/aaaa" name="dataEvento"/>
+				  </div>
+			  </div> 
+			  
+			  <div class="form-group row">
+				  <label for="duracao" class="col-sm-2 col-form-label">Duração</label>
+			  	  <div class="col-sm-2">
+				      <input type="text" class="form-control" id="duracao" placeholder="Ex.: 3h" name="duracao"/>
+				  </div>
+			  </div> 
+			  
+			  <div class="form-group row">
+				  <label for="local" class="col-sm-2 col-form-label">Local</label>
+				  <div class="col-sm-2">
+					  <input type="text" class="form-control" id="local" placeholder="Ex.: Bairro Alegria, Av. das Flores,192," name="local">  
+				  </div>
+			  </div>
+			  
+			  <div class="form-group row">
+				 <label for="statusInscricoes" class="col-sm-2 col-form-label">Status das Inscrições</label>
+    			    <div class="col-sm-2">
+            			<select class="form-control" id="statusInscricoes" name="statusInscricoes">
+            			    <option value="ABERTAS">Abertas</option>
+                			<option value="AGUARDANDO">Aguardando</option>
+               				 <option value="ENCERRADAS">Encerradas</option>
+           				 </select>
+				 	 </div>
+			  </div> 
+
+			   <div class="form-group row">
+			  	  <div class="col-md-2 offset-md-2 col-sm-10">
+					  <button type="submit" class="btn btn-warning">Salvar</button>
+				  </div>
+			  </div> 
+			  
+		  </div>
+	  </div>
+	  </form>
+		  <script src="/js/jquery-3.4.1.min.js"> </script>
+	  	  <script src="/js/popper.min.js"> </script>
+	  	  <script src="/js/bootstrap.min.js"> </script>
+  </body>
+</html>
